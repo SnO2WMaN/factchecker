@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "jnoortheen.nix-ide",
+    "arrterian.nix-env-selector",
+    "tamasfe.even-better-toml",
+    "jkillian.custom-local-formatters",
+    "bradlc.vscode-tailwindcss"
+  ]
+}

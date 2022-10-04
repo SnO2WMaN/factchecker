@@ -1,0 +1,58 @@
+{
+  "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "files.exclude": {
+    "**/.direnv": true,
+    "**/.vercel": true,
+    "**/.next": true,
+    "**/node_modules": true
+  },
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json": [
+      ".github/workflows/*.yml"
+    ]
+  },
+  "customLocalFormatters.formatters": [
+    {
+      "command": "treefmt -q --stdin ${file}",
+      "languages": [
+        "json",
+        "jsonc",
+        "markdown",
+        "nix",
+        "toml",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+      ]
+    }
+  ],
+  "[toml]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[nix]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  }
+}

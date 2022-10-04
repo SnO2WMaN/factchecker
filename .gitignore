@@ -1,0 +1,32 @@
+# Nix
+.direnv/
+result
+
+# misc
+.DS_Store
+*.pem
+
+# env
+.env
+.env*.local
+
+# dependency
+node_modules/
+
+# cache
+.eslintcache
+
+# log
+.pnpm-debug.log
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel
+.vercel
+
+# Next.js
+.next/
+out/
+build/

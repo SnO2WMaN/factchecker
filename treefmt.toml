@@ -1,0 +1,18 @@
+[formatter.alejandra]
+command = "alejandra"
+includes = ["*.nix"]
+
+[formatter.dprint]
+command = "dprint"
+options = ["fmt"]
+includes = [
+  "*.json",
+  "*.toml",
+  "*.md",
+  "*.js",
+  "*.jsx",
+  "*.ts",
+  "*.tsx",
+  "*.cjs",
+  "*.mjs",
+]

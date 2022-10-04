@@ -1,0 +1,53 @@
+{
+  "root": true,
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:eslint-comments/recommended"
+  ],
+  "plugins": [
+    "unused-imports",
+    "simple-import-sort"
+  ],
+  "rules": {
+    "prefer-spread": 2,
+    "prefer-template": 2,
+    "no-useless-rename": [  2
+    ],
+    "object-shorthand": [    2,
+      "always"
+    ],
+    /* unused-imports */
+    "unused-imports/no-unused-imports": [
+      2
+    ],
+    /* simple-import-sort */
+    "sort-imports": 0,
+    "simple-import-sort/imports": 2,
+    "simple-import-sort/exports": 2,
+    /* react */
+    "react/self-closing-comp": [2, { "component": true, "html": false }]
+  },
+  "overrides": [
+    {
+      "files": ["*.config.js"],
+      "extends": ["plugin:node/recommended"],
+      "plugins": ["node"],
+      "rules": {}
+    },
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "extends": [
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "plugins": [
+        "@typescript-eslint"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "rules": {}
+    }
+  ]
+}
