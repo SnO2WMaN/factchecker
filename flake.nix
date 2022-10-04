@@ -33,7 +33,7 @@
             alejandra
             dprint
             treefmt
-            nodejs-14_x
+            nodejs-16_x
             nodePackages.pnpm
           ];
           commands = [
@@ -44,12 +44,12 @@
           ];
           env = [
             {
-              name = "PUPPETEER_EXECUTABLE_PATH";
-              value = "${pkgs.chromium}/bin/chromium";
-            }
-            {
               name = "PATH";
               eval = "$PATH:$PRJ_ROOT/node_modules/.bin";
+            }
+            {
+              name = "LD_LIBRARY_PATH";
+              eval = pkgs.lib.makeLibraryPath [pkgs.libuuid];
             }
           ];
         };

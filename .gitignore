@@ -1,6 +1,8 @@
 # Nix
 .direnv/
 result
+result-bin
+result-man
 
 # misc
 .DS_Store

@@ -1,7 +1,6 @@
 {
-  "extends": "@tsconfig/node14/tsconfig.json",
+  "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
-    "strict": true,
     "lib": [
       "dom",
       "dom.iterable",
@@ -9,13 +8,10 @@
     ],
     "module": "esnext",
     "moduleResolution": "node",
+    "jsx": "react-jsx",
     "noEmit": true,
-    "jsx": "preserve",
-    "allowJs": true,
-    "incremental": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "~/*": [
         "./src/*"
@@ -24,13 +20,5 @@
         "./*"
       ]
     }
-  },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  }
 }
