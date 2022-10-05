@@ -1,250 +1,145 @@
-import React, { useMemo } from "react";
-import {
-  Image as CanvasImage,
-  Layer as CanvasLayer,
-  Rect as CanvasRect,
-  Stage as CanvasStage,
-  Text,
-} from "react-konva";
-import useImage from "use-image";
+import clsx from "clsx";
+import isUrl from "is-url";
+import React, { ChangeEvent, useMemo, useState } from "react";
 
-export const Correct: React.FC<{ thumbnail: string; text: string }> = ({ thumbnail, text }) => {
-  const [imgCover] = useImage("/correct.png");
-  const [imgThumbnail] = useImage(
-    thumbnail,
-  );
-
-  const pos = useMemo(() => {
-    if (!imgThumbnail) return;
-
-    const scaleX = 460 / imgThumbnail.width;
-    const scaleY = 420 / imgThumbnail.height;
-    return {
-      image: imgThumbnail,
-      scale: {
-        x: Math.max(scaleX, scaleY),
-        y: Math.max(scaleX, scaleY),
-      },
-      offset: {
-        x: (imgThumbnail.width * Math.max(scaleX, scaleY) - 460) / 2,
-        y: (imgThumbnail.height * Math.max(scaleX, scaleY) - 420) / 2,
-      },
-    };
-  }, [imgThumbnail]);
-
-  if (!pos) return <></>;
-  return (
-    <>
-      <CanvasRect
-        x={20}
-        y={60}
-        width={460}
-        height={420}
-        fillPatternImage={pos.image}
-        fillPatternScale={pos.scale}
-        fillPatternOffset={pos.offset}
-      />
-      <CanvasImage image={imgCover} width={960} height={502} />
-      <Text
-        text={text}
-        fill={"#323232"}
-        fontSize={28}
-        fontFamily={"M PLUS 1p"}
-        x={560}
-        y={190}
-        width={320}
-        height={120}
-        align={"center"}
-      />
-    </>
-  );
-};
-
-export const AlmostCorrect: React.FC<{ thumbnail: string; text: string }> = ({ thumbnail, text }) => {
-  const [imgCover] = useImage("/almost_correct.png");
-  const [imgThumbnail] = useImage(
-    thumbnail,
-  );
-
-  const pos = useMemo(() => {
-    if (!imgThumbnail) return;
-
-    const scaleX = 460 / imgThumbnail.width;
-    const scaleY = 460 / imgThumbnail.height;
-    return {
-      image: imgThumbnail,
-      scale: {
-        x: Math.max(scaleX, scaleY),
-        y: Math.max(scaleX, scaleY),
-      },
-      offset: {
-        x: (imgThumbnail.width * Math.max(scaleX, scaleY) - 460) / 2,
-        y: (imgThumbnail.height * Math.max(scaleX, scaleY) - 460) / 2,
-      },
-    };
-  }, [imgThumbnail]);
-
-  if (!pos) return <></>;
-  return (
-    <>
-      <CanvasRect
-        x={20}
-        y={20}
-        width={460}
-        height={460}
-        fillPatternImage={pos.image}
-        fillPatternScale={pos.scale}
-        fillPatternOffset={pos.offset}
-      />
-      <CanvasImage image={imgCover} width={960} height={502} />
-      <Text
-        text={text}
-        fill={"#323232"}
-        fontSize={28}
-        fontFamily={"M PLUS 1p"}
-        x={560}
-        y={190}
-        width={320}
-        height={120}
-        align={"center"}
-      />
-    </>
-  );
-};
-
-export const NotCorrect: React.FC<{ thumbnail: string; text: string }> = ({ thumbnail, text }) => {
-  const [imgCover] = useImage("/not_correct.png");
-  const [imgThumbnail] = useImage(
-    thumbnail,
-  );
-
-  const pos = useMemo(() => {
-    if (!imgThumbnail) return;
-
-    const scaleX = 460 / imgThumbnail.width;
-    const scaleY = 460 / imgThumbnail.height;
-    return {
-      image: imgThumbnail,
-      scale: {
-        x: Math.max(scaleX, scaleY),
-        y: Math.max(scaleX, scaleY),
-      },
-      offset: {
-        x: (imgThumbnail.width * Math.max(scaleX, scaleY) - 460) / 2,
-        y: (imgThumbnail.height * Math.max(scaleX, scaleY) - 460) / 2,
-      },
-    };
-  }, [imgThumbnail]);
-
-  if (!pos) return <></>;
-  return (
-    <>
-      <CanvasRect
-        x={500}
-        y={100}
-        width={460}
-        height={280}
-        fillPatternImage={pos.image}
-        fillPatternScale={pos.scale}
-        fillPatternOffset={pos.offset}
-      />
-      <CanvasImage image={imgCover} width={960} height={502} />
-      <Text
-        text={text}
-        fill={"#EBEBEB"}
-        fontSize={28}
-        fontFamily={"M PLUS 1p"}
-        x={90}
-        y={190}
-        width={320}
-        height={120}
-        align={"center"}
-      />
-    </>
-  );
-};
-
-export const Wrong: React.FC<{ thumbnail: string; text: string }> = ({ thumbnail, text }) => {
-  const [imgCover] = useImage("/wrong.png");
-  const [imgThumbnail] = useImage(
-    thumbnail,
-  );
-
-  const pos = useMemo(() => {
-    if (!imgThumbnail) return;
-
-    const scaleX = 500 / imgThumbnail.width;
-    const scaleY = 500 / imgThumbnail.height;
-    return {
-      image: imgThumbnail,
-      scale: {
-        x: Math.max(scaleX, scaleY),
-        y: Math.max(scaleX, scaleY),
-      },
-      offset: {
-        x: (imgThumbnail.width * Math.max(scaleX, scaleY) - 500) / 2,
-        y: (imgThumbnail.height * Math.max(scaleX, scaleY) - 500) / 2,
-      },
-    };
-  }, [imgThumbnail]);
-
-  if (!pos) return <></>;
-  return (
-    <>
-      <CanvasRect
-        x={470}
-        y={15}
-        width={500}
-        height={500}
-        fillPatternImage={pos.image}
-        fillPatternScale={pos.scale}
-        fillPatternOffset={pos.offset}
-      />
-      <CanvasImage image={imgCover} width={960} height={502} />
-      <Text
-        text={text}
-        fill={"#EBEBEB"}
-        fontSize={28}
-        fontFamily={"M PLUS 1p"}
-        x={90}
-        y={190}
-        width={320}
-        height={120}
-        align={"center"}
-      />
-    </>
-  );
-};
-
-export const Output: React.FC<{
-  type: "CORRECT" | "ALMOST_CORRECT" | "NOT_CORRECT" | "WRONG";
-  text: string;
-  thumbnail: string;
-}> = ({
-  type,
-  thumbnail,
-  text,
-}) => {
-  return (
-    <CanvasStage width={960} height={502}>
-      <CanvasLayer>
-        {type === "CORRECT" && <Correct thumbnail={thumbnail} text={text} />}
-        {type === "ALMOST_CORRECT" && <AlmostCorrect thumbnail={thumbnail} text={text} />}
-        {type === "NOT_CORRECT" && <NotCorrect thumbnail={thumbnail} text={text} />}
-        {type === "WRONG" && <Wrong thumbnail={thumbnail} text={text} />}
-      </CanvasLayer>
-    </CanvasStage>
-  );
-};
+import { FactImage, ImageType } from "./components/FactImage";
 
 export const App: React.FC = () => {
+  const [text, setText] = useState("鴨川って快活CLUBだ");
+  const [type, setType] = useState<ImageType>("CORRECT");
+  const [rawThumbnailUrl, setThumbnail] = useState<string>(
+    "https://jbpress.ismedia.jp/mwimgs/b/d/640wm/img_bd39a69915f83640b4f0d0f469467f0f1324503.jpg",
+  );
+
+  const handleRadio = (e: ChangeEvent<HTMLInputElement>) => {
+    setType(e.target.value as ImageType);
+  };
+
+  const thumbnailUrl = useMemo(() => {
+    if (!isUrl(rawThumbnailUrl)) return null;
+    return rawThumbnailUrl;
+  }, [rawThumbnailUrl]);
+
   return (
-    <div>
-      <Output
-        type={"WRONG"}
-        text={"鴨川って快活CLUBだ"}
-        thumbnail={"https://jbpress.ismedia.jp/mwimgs/b/d/640wm/img_bd39a69915f83640b4f0d0f469467f0f1324503.jpg"}
-      />
+    <div
+      className={clsx(
+        ["flex", ["flex-col"], ["items-center"]],
+        ["mx-auto"],
+        ["py-8"],
+      )}
+    >
+      {thumbnailUrl && <FactImage type={type} text={text} thumbnail={thumbnailUrl} />}
+      <div className={clsx(["container"], ["max-w-screen-md"])}>
+        <div className={clsx(["mt-4"], ["grid", ["grid-cols-2"], ["gap-4"]])}>
+          <div className={clsx(["px-4", "py-4"], ["border"], ["shadow"], ["rounded"])}>
+            <div className={clsx(["h-full"], ["flex", ["flex-col"], ["items-start"], ["justify-evenly"]])}>
+              <label>
+                <input
+                  type="radio"
+                  name="type"
+                  value="CORRECT"
+                  checked={type === "CORRECT"}
+                  onChange={handleRadio}
+                >
+                </input>
+                <span className={clsx(["ml-1"])}>正確</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="type"
+                  value={"ALMOST_CORRECT"}
+                  checked={type === "ALMOST_CORRECT"}
+                  onChange={handleRadio}
+                >
+                </input>
+                <span className={clsx(["ml-1"])}>ほぼ正確</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="type"
+                  value={"NOT_CORRECT"}
+                  checked={type === "NOT_CORRECT"}
+                  onChange={handleRadio}
+                >
+                </input>
+                <span className={clsx(["ml-1"])}>不正確</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="type"
+                  value={"WRONG"}
+                  checked={type === "WRONG"}
+                  onChange={handleRadio}
+                >
+                </input>
+                <span className={clsx(["ml-1"])}>誤り</span>
+              </label>
+            </div>
+          </div>
+          <div
+            className={clsx(
+              ["px-4", "py-4"],
+              ["border"],
+              ["shadow"],
+              ["rounded"],
+            )}
+          >
+            <label
+              className={clsx(
+                ["flex", "flex-col"],
+              )}
+            >
+              <span>テキスト</span>
+              <textarea
+                className={clsx(
+                  ["mt-2"],
+                  ["p-2"],
+                  ["border"],
+                  ["resize-none"],
+                )}
+                value={text}
+                onChange={(e) => {
+                  setText(e.target.value);
+                }}
+              />
+            </label>
+          </div>
+          <div
+            className={clsx(
+              ["px-4", "py-4"],
+              ["border"],
+              ["shadow"],
+              ["rounded"],
+              ["col-span-2"],
+            )}
+          >
+            <label
+              className={clsx(
+                ["flex", "flex-col"],
+              )}
+            >
+              <span>画像URL</span>
+              <input
+                className={clsx(
+                  ["mt-2"],
+                  ["p-2"],
+                  ["border"],
+                  ["text-sm"],
+                  ["font-mono"],
+                )}
+                value={rawThumbnailUrl}
+                onChange={(e) => {
+                  setThumbnail(e.target.value);
+                }}
+              >
+              </input>
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

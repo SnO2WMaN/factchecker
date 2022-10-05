@@ -1,1 +1,7 @@
-@import "the-new-css-reset";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  overflow-y: scroll;
+}
