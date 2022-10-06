@@ -16,7 +16,6 @@ export const App: React.FC = () => {
   };
 
   const thumbnailUrl = useMemo(() => {
-    if (!isUrl(rawThumbnailUrl)) return null;
     return rawThumbnailUrl;
   }, [rawThumbnailUrl]);
 
