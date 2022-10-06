@@ -148,7 +148,13 @@ export const App: React.FC = () => {
             className={clsx(["text-blue-500"], ["underline"])}
           >
             GitHub
-          </a>まで．
+          </a>まで。
+          <a
+            href="https://twitter.com/hashtag/ファクトチェッカ"
+            className={clsx(["text-blue-500"], ["underline"])}
+          >
+            #ファクトチェッカ
+          </a>
         </p>
       </footer>
     </div>
