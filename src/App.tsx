@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import isUrl from "is-url";
 import React, { ChangeEvent, useMemo, useState } from "react";
 
 import { FactImage, ImageType } from "./components/FactImage";
@@ -16,7 +15,6 @@ export const App: React.FC = () => {
   };
 
   const thumbnailUrl = useMemo(() => {
-    if (!isUrl(rawThumbnailUrl)) return null;
     return rawThumbnailUrl;
   }, [rawThumbnailUrl]);
 
