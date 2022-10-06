@@ -140,6 +140,17 @@ export const App: React.FC = () => {
           </div>
         </div>
       </div>
+      <footer className={clsx(["mt-4"])}>
+        <p>
+          要望、バグ報告などは
+          <a
+            href="https://github.com/SnO2WMaN/factchecker"
+            className={clsx(["text-blue-500"], ["underline"])}
+          >
+            GitHub
+          </a>まで．
+        </p>
+      </footer>
     </div>
   );
 };
