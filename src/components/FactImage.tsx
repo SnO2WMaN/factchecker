@@ -47,10 +47,11 @@ export const Correct: React.FC<{ thumbnail: string; text: string }> = ({ thumbna
         fontSize={28}
         fontFamily={"M PLUS 1p"}
         x={560}
-        y={190}
+        y={145}
         width={320}
         height={120}
         align={"center"}
+        verticalAlign={"middle"}
       />
     </>
   );
@@ -102,10 +103,11 @@ export const AlmostCorrect: React.FC<{ thumbnail: string; text: string }> = ({ t
         fontSize={28}
         fontFamily={"M PLUS 1p"}
         x={560}
-        y={190}
+        y={145}
         width={320}
         height={120}
         align={"center"}
+        verticalAlign={"middle"}
       />
     </>
   );
@@ -157,10 +159,11 @@ export const NotCorrect: React.FC<{ thumbnail: string; text: string }> = ({ thum
         fontSize={28}
         fontFamily={"M PLUS 1p"}
         x={90}
-        y={190}
+        y={145}
         width={320}
         height={120}
         align={"center"}
+        verticalAlign={"middle"}
       />
     </>
   );
@@ -212,10 +215,11 @@ export const Wrong: React.FC<{ thumbnail: string; text: string }> = ({ thumbnail
         fontSize={28}
         fontFamily={"M PLUS 1p"}
         x={90}
-        y={190}
+        y={145}
         width={320}
         height={120}
         align={"center"}
+        verticalAlign={"middle"}
       />
     </>
   );
