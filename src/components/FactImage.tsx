@@ -4,10 +4,8 @@ import { Image as CanvasImage, Rect as CanvasRect, Text } from "react-konva";
 import useImage from "use-image";
 
 export const Correct: React.FC<{ thumbnail: string; text: string }> = ({ thumbnail, text }) => {
-  const [imgCover] = useImage("/correct.png");
-  const [imgThumbnail] = useImage(
-    thumbnail,
-  );
+  const [imgTemplate] = useImage("/correct.png");
+  const [imgThumbnail] = useImage(thumbnail);
 
   const pos = useMemo(() => {
     if (!imgThumbnail) {
@@ -29,9 +27,8 @@ export const Correct: React.FC<{ thumbnail: string; text: string }> = ({ thumbna
     };
   }, [imgThumbnail]);
 
-  if (!pos) {
-    return <></>;
-  }
+  if (!imgTemplate || !pos) return <></>;
+
   return (
     <>
       <CanvasRect
@@ -43,7 +40,7 @@ export const Correct: React.FC<{ thumbnail: string; text: string }> = ({ thumbna
         fillPatternScale={pos.scale}
         fillPatternOffset={pos.offset}
       />
-      <CanvasImage image={imgCover} width={960} height={502} />
+      <CanvasImage image={imgTemplate} width={960} height={502} />
       <Text
         text={text}
         fill={"#323232"}
@@ -60,7 +57,7 @@ export const Correct: React.FC<{ thumbnail: string; text: string }> = ({ thumbna
 };
 
 export const AlmostCorrect: React.FC<{ thumbnail: string; text: string }> = ({ thumbnail, text }) => {
-  const [imgCover] = useImage("/almost_correct.png");
+  const [imgTemplate] = useImage("/almost_correct.png");
   const [imgThumbnail] = useImage(
     thumbnail,
   );
@@ -85,9 +82,8 @@ export const AlmostCorrect: React.FC<{ thumbnail: string; text: string }> = ({ t
     };
   }, [imgThumbnail]);
 
-  if (!pos) {
-    return <></>;
-  }
+  if (!imgTemplate || !pos) return <></>;
+
   return (
     <>
       <CanvasRect
@@ -99,7 +95,7 @@ export const AlmostCorrect: React.FC<{ thumbnail: string; text: string }> = ({ t
         fillPatternScale={pos.scale}
         fillPatternOffset={pos.offset}
       />
-      <CanvasImage image={imgCover} width={960} height={502} />
+      <CanvasImage image={imgTemplate} width={960} height={502} />
       <Text
         text={text}
         fill={"#323232"}
@@ -116,7 +112,7 @@ export const AlmostCorrect: React.FC<{ thumbnail: string; text: string }> = ({ t
 };
 
 export const NotCorrect: React.FC<{ thumbnail: string; text: string }> = ({ thumbnail, text }) => {
-  const [imgCover] = useImage("/not_correct.png");
+  const [imgTemplate] = useImage("/not_correct.png");
   const [imgThumbnail] = useImage(
     thumbnail,
   );
@@ -141,9 +137,8 @@ export const NotCorrect: React.FC<{ thumbnail: string; text: string }> = ({ thum
     };
   }, [imgThumbnail]);
 
-  if (!pos) {
-    return <></>;
-  }
+  if (!imgTemplate || !pos) return <></>;
+
   return (
     <>
       <CanvasRect
@@ -155,7 +150,7 @@ export const NotCorrect: React.FC<{ thumbnail: string; text: string }> = ({ thum
         fillPatternScale={pos.scale}
         fillPatternOffset={pos.offset}
       />
-      <CanvasImage image={imgCover} width={960} height={502} />
+      <CanvasImage image={imgTemplate} width={960} height={502} />
       <Text
         text={text}
         fill={"#EBEBEB"}
@@ -172,7 +167,7 @@ export const NotCorrect: React.FC<{ thumbnail: string; text: string }> = ({ thum
 };
 
 export const Wrong: React.FC<{ thumbnail: string; text: string }> = ({ thumbnail, text }) => {
-  const [imgCover] = useImage("/wrong.png");
+  const [imgTemplate] = useImage("/wrong.png");
   const [imgThumbnail] = useImage(
     thumbnail,
   );
@@ -197,9 +192,8 @@ export const Wrong: React.FC<{ thumbnail: string; text: string }> = ({ thumbnail
     };
   }, [imgThumbnail]);
 
-  if (!pos) {
-    return <></>;
-  }
+  if (!imgTemplate || !pos) return <></>;
+
   return (
     <>
       <CanvasRect
@@ -211,7 +205,7 @@ export const Wrong: React.FC<{ thumbnail: string; text: string }> = ({ thumbnail
         fillPatternScale={pos.scale}
         fillPatternOffset={pos.offset}
       />
-      <CanvasImage image={imgCover} width={960} height={502} />
+      <CanvasImage image={imgTemplate} width={960} height={502} />
       <Text
         text={text}
         fill={"#EBEBEB"}
