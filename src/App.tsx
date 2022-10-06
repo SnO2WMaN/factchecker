@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import isUrl from "is-url";
 import React, { ChangeEvent, useMemo, useState } from "react";
 
 import { FactImage, ImageType } from "./components/FactImage";

@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@tsconfig/node16': 1.0.3
-  '@types/is-url': ^1.2.30
   '@types/node': 18.8.2
   '@types/react': ^18.0.21
   '@types/react-dom': ^18.0.6
@@ -19,7 +18,6 @@ specifiers:
   eslint-plugin-react-hooks: 4.6.0
   eslint-plugin-simple-import-sort: 8.0.0
   eslint-plugin-unused-imports: 2.0.0
-  is-url: ^1.2.4
   konva: ^8.3.13
   npm-run-all: 4.1.5
   postcss: ^8.4.17
@@ -38,7 +36,6 @@ specifiers:
 dependencies:
   canvas: 2.10.1
   clsx: 1.2.1
-  is-url: 1.2.4
   konva: 8.3.13
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -47,7 +44,6 @@ dependencies:
 
 devDependencies:
   '@tsconfig/node16': 1.0.3
-  '@types/is-url': 1.2.30
   '@types/node': 18.8.2
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
@@ -525,10 +521,6 @@ packages:
 
   /@tsconfig/node16/1.0.3:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
-    dev: true
-
-  /@types/is-url/1.2.30:
-    resolution: {integrity: sha512-AnlNFwjzC8XLda5VjRl4ItSd8qp8pSNowvsut0WwQyBWHpOxjxRJm8iO6uETWqEyLdYdb9/1j+Qd9gQ4l5I4fw==}
     dev: true
 
   /@types/json-schema/7.0.11:
@@ -2623,10 +2615,6 @@ packages:
   /is-typedarray/1.0.0:
     resolution: {integrity: sha512-cyA56iCMHAh5CdzjJIa4aohJyeO1YbwLi3Jc35MmRU6poroFjIGZzUzupGiRPOjgHg9TLu43xbpwXk523fMxKA==}
     dev: true
-
-  /is-url/1.2.4:
-    resolution: {integrity: sha512-ITvGim8FhRiYe4IQ5uHSkj7pVaPDrCTkNd3yq3cV7iZAcJdHTUMPMEHcqSOy9xZ9qFenQCvi+2wjH9a1nXqHww==}
-    dev: false
 
   /is-weakref/1.0.2:
     resolution: {integrity: sha512-qctsuLZmIQ0+vSSMfoVvyFe2+GSEvnmZ2ezTup1SBse9+twCCeial6EEi3Nc2KFcf6+qz2FBPnjXsk8xhKSaPQ==}
