@@ -1,5 +1,20 @@
 {
   "nodes": {
+    "corepack": {
+      "locked": {
+        "lastModified": 1665302767,
+        "narHash": "sha256-heqc9fElWIZWgMyDhiReWSauzPbjCNK5wnmE/REuvq4=",
+        "owner": "SnO2WMaN",
+        "repo": "corepack-flake",
+        "rev": "28272e1fdd9a8236d1d7d1c18e987ff3caaab2b0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "SnO2WMaN",
+        "repo": "corepack-flake",
+        "type": "github"
+      }
+    },
     "devshell": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -99,6 +114,7 @@
     },
     "root": {
       "inputs": {
+        "corepack": "corepack",
         "devshell": "devshell",
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils_2",

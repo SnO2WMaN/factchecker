@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    corepack.url = "github:SnO2WMaN/corepack-flake";
   };
 
   # dev
@@ -25,6 +26,7 @@
           inherit system;
           overlays = with inputs; [
             devshell.overlay
+            corepack.overlays.default
           ];
         };
       in {
@@ -34,7 +36,10 @@
             dprint
             treefmt
             nodejs-16_x
-            nodePackages.pnpm
+            (mkCorepack {
+              nodejs = nodejs-16_x;
+              pm = "pnpm";
+            })
           ];
           commands = [
             {
