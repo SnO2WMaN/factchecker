@@ -1,6 +1,12 @@
-import React, { useMemo } from "react";
-import { Layer as CanvasLayer, Stage as CanvasStage } from "react-konva";
-import { Image as CanvasImage, Rect as CanvasRect, Text } from "react-konva";
+import { Layer } from "konva/lib/Layer";
+import React, { useEffect, useMemo, useRef } from "react";
+import {
+  Image as CanvasImage,
+  Layer as CanvasLayer,
+  Rect as CanvasRect,
+  Stage as CanvasStage,
+  Text,
+} from "react-konva";
 import useImage from "use-image";
 
 export const Correct: React.FC<{ thumbnail: string; text: string }> = ({ thumbnail, text }) => {
@@ -236,9 +242,16 @@ export const FactImage: React.FC<{
   thumbnail,
   text,
 }) => {
+  const layerRef = useRef<Layer>(null);
+
+  useEffect(() => {
+    const $canvas = layerRef.current?.getCanvas()._canvas;
+    if ($canvas) $canvas.id = "fact-image";
+  }, []);
+
   return (
-    <CanvasStage width={960} height={502}>
-      <CanvasLayer>
+    <CanvasStage htmlId="fact-image" width={960} height={502}>
+      <CanvasLayer ref={layerRef}>
         {type === "CORRECT" && <Correct thumbnail={thumbnail} text={text} />}
         {type === "ALMOST_CORRECT" && <AlmostCorrect thumbnail={thumbnail} text={text} />}
         {type === "NOT_CORRECT" && <NotCorrect thumbnail={thumbnail} text={text} />}

@@ -28,6 +28,18 @@ export const App: React.FC = () => {
     >
       {thumbnailUrl && <FactImage type={type} text={text} thumbnail={thumbnailUrl} />}
       <div className={clsx(["container"], ["max-w-screen-md"])}>
+        <div>
+          <button
+            onClick={() => {
+              const $image = document.getElementById("fact-image") as HTMLCanvasElement | null;
+              if (!$image) return;
+              $image.toBlob((blob) => {
+              });
+            }}
+          >
+            保存
+          </button>
+        </div>
         <div className={clsx(["mt-4"], ["grid", ["grid-cols-2"], ["gap-4"]])}>
           <div className={clsx(["px-4", "py-4"], ["border"], ["shadow"], ["rounded"])}>
             <div className={clsx(["h-full"], ["flex", ["flex-col"], ["items-start"], ["justify-evenly"]])}>
